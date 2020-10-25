@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use App\Models\LessonQuestion;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
@@ -20,14 +19,10 @@ class QuestionController extends Controller
 
     public function getLessonQuestions($lesson_id) {
         $target_questions = LessonQuestion::where('lesson_id',$lesson_id)->get();
-        $questions_id = array();
         $questions = array();
         foreach ($target_questions as $question) {
-            array_push($questions_id,$question->question_id);
-        }
-        foreach ($questions_id as $question) {
             array_push($questions,
-                Question::where('id', $question)->with('answers')->get());
+                Question::where('id', $question->id)->with('answers')->get());
         }
         return $questions;
     }
