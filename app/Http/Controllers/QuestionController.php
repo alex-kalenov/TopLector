@@ -3,37 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\LessonQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class QuestionController extends Controller
 {
     public function getAll() {
-        $questions = DB::table('questions')
-            ->join('answers', 'questions.id', '=', 'answers.question_id')
-            ->select('questions.*', 'answers.*')
-            ->get();
+        $all_questions = Question::all();
+        $questions = array();
+        foreach ($all_questions as $question) {
+            array_push($questions, $question->with('answers')->get());
+        }
         return $questions;
     }
 
     public function getLessonQuestions($lesson_id) {
-        $questions = DB::table('questions')
-            ->join('answers', 'questions.id', '=', 'answers.question_id')
-            ->select('questions.*', 'answers.*')
-            ->where('questions.lesson_id', '=', $lesson_id)
-            ->get();
+        $target_questions = LessonQuestion::where('lesson_id',$lesson_id)->get();
+        $questions_id = array();
+        $questions = array();
+        foreach ($target_questions as $question) {
+            array_push($questions_id,$question->question_id);
+        }
+        foreach ($questions_id as $question) {
+            array_push($questions,
+                Question::where('id', $question)->with('answers')->get());
+        }
         return $questions;
     }
 
     public function create(Request $request) {
         $question = Question::create($request->all());
+        LessonQuestion::create(['question_id' => $question->id]);
         return response()->json($question, 201);
     }
 
     public function addToLesson(Request $request) {
-        Question::where('id',$request->input('id'))->
-            update(['lesson_id' => $request->input('lesson_id')]);
-        $question = Question::where('id',$request->input('id'))->get();
+        LessonQuestion::where('question_id',$request->input('question_id'))
+            ->update(['lesson_id' => $request->input('lesson_id')]);
+        $question = LessonQuestion::where('question_id',$request->input('question_id'))
+            ->where('lesson_id',$request->input('lesson_id'))->get();
         return response()->json($question, 201);
     }
 }

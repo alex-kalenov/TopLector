@@ -10,5 +10,9 @@ class Question extends Model
     use HasFactory;
     protected $table = 'questions';
     protected $primaryKey = 'id';
-    protected $fillable = ['lesson_id','name','text','show_time','timecut'];
+    protected $fillable = ['name','text','show_time','timeout'];
+
+    public function answers() {
+        return $this->hasMany('App\Models\Answer', 'question_id');
+    }
 }

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3acb3e07-058b-4c2b-ab89-b83c66c91abf" name="Default Changelist" comment="" />
+    <list default="true" id="3acb3e07-058b-4c2b-ab89-b83c66c91abf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Answer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Answer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Question.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +16,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -152,6 +161,8 @@
       <updated>1603562385994</updated>
       <workItem from="1603562387346" duration="641000" />
       <workItem from="1603606600767" duration="11057000" />
+      <workItem from="1603619255628" duration="1395000" />
+      <workItem from="1603625632145" duration="8859000" />
     </task>
     <servers />
   </component>
@@ -159,10 +170,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="522" y="209" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603610076339">
+    <state x="522" y="209" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603631440996">
       <screen x="0" y="0" width="1680" height="1002" />
     </state>
-    <state x="522" y="209" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1002@0.0.1680.1002" timestamp="1603610076339" />
+    <state x="522" y="209" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1002@0.0.1680.1002" timestamp="1603631440996" />
     <state x="503" y="194" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603613092371">
       <screen x="0" y="0" width="1680" height="1002" />
     </state>

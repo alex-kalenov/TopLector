@@ -11,4 +11,8 @@ class Answer extends Model
     protected $table = 'answers';
     protected $primaryKey = 'id';
     protected $fillable = ['question_id','text','is_true'];
+
+    public function question() {
+        return $this->belongsTo('App\Models\Question', 'id');
+    }
 }

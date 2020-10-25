@@ -19,14 +19,13 @@
 
     <script>
         let data = {
-            parent_id: 0,
-            lesson_id: 1,
-            time_value: '2020-10-25 11:23:20',
-            text: 'test',
+            name: 'test',
+            text: 'text',
+            show_time: '2020-10-25 11:23:20',
+            timeout: 10,
         };
-        fetch('api/comment',{
-            method: 'POST',
-            body: JSON.stringify(data),
+        fetch('api/question/1',{
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
